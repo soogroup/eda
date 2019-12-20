@@ -10,8 +10,8 @@ Created on Sun Nov  3 21:09:06 2019
 """
 #%%
 color = ['red', 'blue', 'white', 'black']
-d_c = {i:j for i,j in ......... }
-d_c
+d_c = {i:j for i,j in enumerate(color) }
+print(d_c)
 
 #%%
 """
@@ -21,8 +21,8 @@ d_c
 color = ['red', 'blue', 'white', 'black']
 cnt = [6, 2, 3, 7]
 # {'red': 6, 'blue': 2, 'white': 3, 'black': 7}
-col_cnt = {i:j for i, j in ....... }
-col_cnt
+col_cnt = {i:j for i, j in zip(color,cnt)}
+print(col_cnt)
 
 #%%
 # [['red', 6], ['blue', 2], ['white', 3], ['black', 7]]
@@ -59,7 +59,8 @@ print(f(1, 4))
 # map 함수
 f = lambda x: x**2
 num = [1, 2, 3, 4, 5]
-list(map(f, num))
+num2 = (list(map(f, num)))
+print(list(map(f, num)))
 
 #%%
 for val in map(f, num):
@@ -67,8 +68,8 @@ for val in map(f, num):
 
 #%%
 # List Comprehension : better!!
-.........
-
+num2 = [i**2 for i in num]
+print(num2)
 #%%
 # map 함수
 f = lambda x,y: x + y
@@ -78,13 +79,13 @@ list(map(f, num, num))
 #%%
 # map 함수 : filtering
 num = [1, 2, 3, 4, 5]
-list(map(lambda x:x**2 if x%2 == 0 else x, num))
-
+num2 = list(map(lambda x:x**2 if x%2 == 0 else x, num))
+print(num2)
 #%%
 # List Comprehension : better!!
 num = [1, 2, 3, 4, 5]
-.........
-
+num2 =[x**2 if x%2 == 0 else x for x in num]
+print(num2)
 #%%
 # 모든 수위 합
 x = 0
@@ -97,8 +98,8 @@ print(x)
 # reduce 함수 
 from functools import reduce
 num = [1, 2, 3, 4, 5]
-.........
-
+sum =reduce(lambda x,y:x+y, num)
+print(sum)
 #%%
 """
 asterisk
