@@ -10,11 +10,13 @@ Created on Sun Nov  3 11:22:34 2019
 """
 #%%
 def print_something(my_name, your_name):
+    print("Hello %s, My name is %s" %(your_name, my_name))
     print("Hello {0}, My name is {1}".format(your_name, my_name))
+    print("Hello {1}, My name is {0}".format(your_name, my_name))
 
 print_something("kim", "lee")
 print_something("lee", "kim")
-print_something( ............ )
+print_something( your_name='Lee', my_name='kim' )
 
 #%%
 def kwargs_test( ...... ):
@@ -36,7 +38,7 @@ def print_something(my_name, your_name='park'):
     print("Hello {}, My name is {}".format(your_name, my_name))
 
 print_something("kim", "lee")
-.....
+print_something("kim")
 
 
 
@@ -46,15 +48,19 @@ print_something("kim", "lee")
 # 가변 인수 (variable arguments)
 """
 #%%
-def vararg_test(a, b, .... ):
-    print(args)
-
+def vararg_test(a, b, *c):
+    print(c)
+    print(type(c))
+    
 print(vararg_test(1, 2, 3, 4, 5))  # 3,4,5
+print(vararg_test(1, 2, 3))
+print(vararg_test(1, 2, 3, 4))
 
 
 #%%
-def vararg_test(a, b, .... ):
-    .... = args
+def vararg_test(a, b, *args ):
+    [*c] = args
+    d = args
     print(args, c, d)
 	c[1] = 44
 

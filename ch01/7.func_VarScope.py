@@ -6,6 +6,7 @@ Created on Sun Nov  3 11:06:21 2019
 """
 
 def calculate(x, y):
+    global total
     total = x + y   # 지역 변수 
     print("calculation--> a:", str(a), "b:", str(b), "a + b:", str(a+b), "total:", str(total))
     return total
